@@ -19,6 +19,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
+      <p>{{ modalData.snippet.description }}</p>
     </a-modal>
     <a-layout-header>
       <a-menu
@@ -115,9 +116,7 @@
       </div>
     </a-layout-content>
 
-    <a-layout-footer style="text-align: center">
-      Ant Design ©2018 Created by Ant UED
-    </a-layout-footer>
+    <a-layout-footer style="text-align: center"> </a-layout-footer>
   </a-layout>
 </template>
 
@@ -142,7 +141,9 @@ export default {
       form: this.$form.createForm(this, { name: "coordinated" })
     };
   },
-  created() {},
+  created() {
+    this.searchVideo({ search: "nuevas tecnologias", results: 8 });
+  },
   methods: {
     async searchVideo(values) {
       this.loading = true;
