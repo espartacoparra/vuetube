@@ -10,9 +10,9 @@ class videoController {
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${results}&q="${search}"&key=${apiKey}`
         )
       ).data;
-      res.json(videos);
+      res.status(200).json(videos);
     } catch (error) {
-      console.log(error);
+      res.status(500).json(error);
     }
   }
 }
